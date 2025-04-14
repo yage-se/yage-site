@@ -163,7 +163,7 @@ a,
 .module,
 .module-small {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -921,7 +921,7 @@ blockquote {
   text-align: center;
   font-size: 16px;
   color: #111;
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 
 .module-icon {
