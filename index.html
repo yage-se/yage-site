@@ -9,10 +9,20 @@
     <meta name="author" content="Yage.se">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--  
+    <style>
+      .btn-green-transparent {
+        background-color: rgba(0, 128, 0, 0.5);
+        color: #fff;
+      }
+      .btn-green-transparent:hover {
+        background-color: rgba(0, 128, 0, 0.8);
+      }
+    </style>
     Document Title
     =============================================
     -->
-    <title>Plant Medicine in Sweden - Yage.se</title>
+    <title>Yage.se – Plant Medicine Retreats in Sweden</title>
+    <link rel="canonical" href="https://yage.se/">
     <!--  
     Favicons
     =============================================
@@ -51,9 +61,9 @@
       ml('account', '476525');
     </script>
 <!-- End MailerLite Universal -->
-  <!-- Preload key hero and testimonial images -->
+  <!-- Preload key hero image -->
   <link rel="preload" as="image" href="assets/images/yage_hero.webp" type="image/webp">
-  <link rel="preload" as="image" href="assets/images/testimonials_bg.webp" type="image/webp">
+  <!-- Removed preload for testimonial background image since it loads lazily -->
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
@@ -79,7 +89,7 @@
       <section class="home-section home-full-height bg-dark bg-gradient" id="home" data-background="assets/images/yage_hero.webp">
       <div class="titan-caption" style="min-height: 80vh;">
           <div class="caption-content">
-            <div class="font-alt mb-30 titan-title-size-1">Welcome to &amp; Yage.se</div>
+            <div class="font-alt mb-30 titan-title-size-1">Welcome to Yage.se</div>
             <div class="font-alt mb-40 titan-title-size-4">
               Awaken<br>
               Heal<br>
@@ -113,7 +123,9 @@
             <div class="row">
               <div class="col-sm-12">
                 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                  <iframe src="https://www.youtube.com/embed/xW5_TQVQRrs" title="YouTube video" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <div id="youtube-thumbnail" role="img" aria-label="YouTube video preview thumbnail" style="background-image:url('https://img.youtube.com/vi/xW5_TQVQRrs/hqdefault.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;cursor:pointer;position:absolute;width:100%;height:100%;" onclick="this.outerHTML='<iframe src=\'https://www.youtube.com/embed/xW5_TQVQRrs?autoplay=1\' style=\'position:absolute;top:0;left:0;width:100%;height:100%;border:0;\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>';">
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:48px;color:white;">▶</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -148,7 +160,7 @@
           </div>
         </section>
         
-        <section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial" data-background="assets/images/testimonials_bg.webp">
+        <section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial lazyload" data-bg="assets/images/testimonials_bg.webp">
           <div class="testimonials-slider pt-140 pb-140">
             <ul class="slides">
               <li>
@@ -238,7 +250,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<script defer src="https://static.elfsight.com/platform/platform.js"></script>
 <div class="elfsight-app-91963561-44fa-4d4d-bff1-7da8b703de86" data-elfsight-app-lazy></div></div>
             </div>
           </div>
@@ -291,13 +303,29 @@
       <script src="assets/lib/jquery/dist/jquery.js" defer></script>
       <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js" defer></script>
       <script src="assets/lib/wow/dist/wow.js" defer></script>
-      <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js" defer></script>
-      <script src="assets/lib/isotope/dist/isotope.pkgd.js" defer></script>
-      <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js" defer></script>
       <script src="assets/lib/smoothscroll.js" defer></script>
-      <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js" defer></script>
-      <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js" defer></script>
       <script src="assets/js/plugins.js" defer></script>
       <script src="assets/js/main.js" defer></script>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const lazySections = document.querySelectorAll(".lazyload");
+          lazySections.forEach(section => {
+            if (section.dataset.bg) {
+              section.style.backgroundImage = `url('${section.dataset.bg}')`;
+            }
+          });
+        });
+      </script>
+      <script>
+        window.addEventListener("touchstart", function(){}, {passive: true});
+        window.addEventListener("wheel", function(){}, {passive: true});
+      </script>
   </body>
 </html>
+
+    <!--
+      Add loading="lazy" to all offscreen images for performance.
+      (No <img> tags currently in gallery or footer, but keep this for future additions.)
+      Example: <img src="..." loading="lazy" alt="">
+    -->
