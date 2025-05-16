@@ -8,6 +8,8 @@
     <meta name="keywords" content="plant medicine, yage, ayahuasca, retreat, Sweden, Amazonian shamanism, healing, spiritual ceremony">
     <meta name="author" content="Yage.se">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="public, max-age=31536000">
+    <meta http-equiv="expires" content="31536000">
     <!--  
     <style>
       .btn-green-transparent {
@@ -53,24 +55,12 @@
     <!-- Main stylesheet and color file-->
     <link href="/assets/css/style.v2.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link id="color-scheme" href="/assets/css/colors/default.v2.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <!-- MailerLite Universal -->
-    <script>
-      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-      ml('account', '476525');
-    </script>
-<!-- End MailerLite Universal -->
   <!-- Preload key hero image -->
   <link rel="preload" as="image" href="/assets/images/yage_hero.webp" type="image/webp">
   <!-- Removed preload for testimonial background image since it loads lazily -->
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
-      <div class="page-loader">
-        <div class="loader">Loading...</div>
-      </div>
       <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top one-page" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -91,11 +81,13 @@
       <div class="titan-caption" style="min-height: 80vh;">
           <div class="caption-content">
             <div class="font-alt mb-30 titan-title-size-1">Welcome to Yage.se</div>
-            <div class="font-alt mb-40 titan-title-size-4">
-              Awaken<br>
-              Heal<br>
-              Transform
-            </div><a class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px; min-width: 180px;" href="https://wa.me/573104430683" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <div style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div class="font-alt mb-40 titan-title-size-4">
+                Awaken<br>
+                Heal<br>
+                Transform
+              </div>
+            </div><a class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px; min-width: 180px;" href="https://wa.me/573104430683" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
           </div>
         </div>
       </section>
@@ -162,7 +154,7 @@
         </section>
         
         <section class="module bg-dark-60 pt-0 pb-0 parallax-bg testimonial lazyload" data-bg="/assets/images/testimonials_bg.webp">
-          <div class="container" style="overflow-x: auto; scroll-snap-type: x mandatory; display: flex; gap: 20px; scroll-behavior: smooth;">
+          <div class="container" style="overflow-x: auto; scroll-snap-type: x mandatory; display: flex; gap: 20px; scroll-behavior: smooth;" aria-label="Testimonials carousel" role="region" tabindex="0">
             <div style="flex: 0 0 100%; scroll-snap-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
               <blockquote class="testimonial-text font-alt">I’m so impressed with your work! I felt safe and cared for in hard moments and I totally trusted you.</blockquote>
               <div class="testimonial-caption font-alt">
@@ -229,9 +221,9 @@
                 <p class="copyright font-alt" style="margin-bottom: 10px;">&copy; 2025 <a href="index.html">Yage.se</a></p>
                 <div style="display: flex; justify-content: center; align-items: center;">
                   <div class="footer-social-links">
-                    <a href="https://m.me/yage.se" target="_blank" aria-label="Facebook Messenger"><i class="fa fa-facebook fa-2x" style="margin: 0 10px;"></i></a>
-                    <a href="https://wa.me/573104430683" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp fa-2x" style="margin: 0 10px;"></i></a>
-                    <a href="https://instagram.com/yageswe" target="_blank" aria-label="Instagram"><i class="fa fa-instagram fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://m.me/yage.se" target="_blank" rel="noopener noreferrer" aria-label="Facebook Messenger"><i class="fa fa-facebook fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://wa.me/573104430683" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa fa-whatsapp fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://instagram.com/yageswe" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram fa-2x" style="margin: 0 10px;"></i></a>
                     <a href="mailto:aya@yage.se" aria-label="Email"><i class="fa fa-envelope fa-2x" style="margin: 0 10px;"></i></a>
                   </div>
                 </div>
@@ -251,6 +243,7 @@
           script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU';
           script.async = true;
           script.defer = true;
+          script.setAttribute('loading', 'lazy');
           document.body.appendChild(script);
           window.removeEventListener('scroll', loadMapOnScroll);
         }
@@ -289,7 +282,7 @@
                 scrollAmount = 0;
               }
               container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-            }, 7000); // Change every 5 seconds
+            }, 5000); // faster cycle every 5 seconds
           }
         });
       </script>
@@ -305,3 +298,12 @@
       (No <img> tags currently in gallery or footer, but keep this for future additions.)
       Example: <img src="..." loading="lazy" alt="">
     -->
+    <!-- MailerLite Universal -->
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '476525');
+    </script>
+<!-- End MailerLite Universal -->
