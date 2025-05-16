@@ -30,18 +30,17 @@
     
     -->
     <!-- Default stylesheets-->
-    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Template specific stylesheets-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Roboto+Condensed:wght@400;700&family=Volkhov:ital@0;1&display=swap" rel="stylesheet">
     <!-- Removed unused CSS libraries for performance -->
-    <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
    
     
     
     <!-- Main stylesheet and color file-->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
     <!-- MailerLite Universal -->
     <script>
@@ -92,8 +91,8 @@
       <section class="module" id="about">
         <div class="container">
           <div class="row">
-                       <div class="col-sm-8 col-sm-offset-2">
-              <h2 class="module-title font-serif text-center" style="font-size: 52px; font-weight: 400; text-align: center; margin-bottom: 40px;">Welcome to Yage.se</h2>¨
+                   <div class="col-sm-8 col-sm-offset-2">
+              <h2 class="module-title font-serif text-center" style="font-size: 52px; font-weight: 400; text-align: center; margin-bottom: 40px;">Welcome to Yage.se</h2>
               <div style="min-height: 300px;">
                 <div class="module-subtitle font-serif">
                 At Yage.se, we honor the ancient healing traditions rooted in Amazonian shamanism and the profound transformation that plant medicines can offer when guided with wisdom and care. Our mission is to connect people in Sweden with experienced shamans who walk the path of ancestral knowledge and healing.
@@ -282,7 +281,8 @@
         </footer>
       </div>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
-      <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
+      <!-- Google Maps API: ensure only one instance and use both async and defer -->
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
     </main>
     <!--  
     JavaScripts
@@ -294,14 +294,10 @@
       <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js" defer></script>
       <script src="assets/lib/isotope/dist/isotope.pkgd.js" defer></script>
       <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js" defer></script>
-      <script src="assets/lib/flexslider/jquery.flexslider.js" defer></script>
-      
       <script src="assets/lib/smoothscroll.js" defer></script>
       <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js" defer></script>
       <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js" defer></script>
-      <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
       <script src="assets/js/plugins.js" defer></script>
       <script src="assets/js/main.js" defer></script>
   </body>
-</html><!-- rebuild -->
-<!-- rebuild -->
+</html>
