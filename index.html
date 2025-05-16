@@ -50,8 +50,8 @@
     
     
     <!-- Main stylesheet and color file-->
-    <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- MailerLite Universal -->
     <script>
       (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -94,11 +94,11 @@
               Awaken<br>
               Heal<br>
               Transform
-            </div><a class="btn btn-border-w btn-round btn-green-transparent" href="https://wa.me/573104430683" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </div><a class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px;" href="https://wa.me/573104430683" target="_blank" rel="noopener">Chat on WhatsApp</a>
           </div>
         </div>
       </section>
-      <section class="module" id="about">
+      <section class="module" id="about" style="min-height: 600px;">
         <div class="container">
           <div class="row">
                    <div class="col-sm-8 col-sm-offset-2">
@@ -281,10 +281,10 @@
                 <p class="copyright font-alt" style="margin-bottom: 10px;">&copy; 2025 <a href="index.html">Yage.se</a></p>
                 <div style="display: flex; justify-content: center; align-items: center;">
                   <div class="footer-social-links">
-                    <a href="https://m.me/yage.se" target="_blank"><i class="fa fa-facebook fa-2x" style="margin: 0 10px;"></i></a>
-                    <a href="https://wa.me/573104430683" target="_blank"><i class="fa fa-whatsapp fa-2x" style="margin: 0 10px;"></i></a>
-                    <a href="https://instagram.com/yageswe" target="_blank"><i class="fa fa-instagram fa-2x" style="margin: 0 10px;"></i></a>
-                    <a href="mailto:aya@yage.se"><i class="fa fa-envelope fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://m.me/yage.se" target="_blank" aria-label="Facebook Messenger"><i class="fa fa-facebook fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://wa.me/573104430683" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="https://instagram.com/yageswe" target="_blank" aria-label="Instagram"><i class="fa fa-instagram fa-2x" style="margin: 0 10px;"></i></a>
+                    <a href="mailto:aya@yage.se" aria-label="Email"><i class="fa fa-envelope fa-2x" style="margin: 0 10px;"></i></a>
                   </div>
                 </div>
               </div>
@@ -293,9 +293,21 @@
         </footer>
       </div>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
-      <!-- Google Maps API: ensure only one instance and use both async and defer -->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
     </main>
+    <!-- Lazy-load Google Maps API only when user scrolls near the map section -->
+    <script>
+      window.addEventListener('scroll', function loadMapOnScroll() {
+        const mapSection = document.getElementById('contact');
+        if (mapSection && mapSection.getBoundingClientRect().top < window.innerHeight * 1.5) {
+          const script = document.createElement('script');
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU';
+          script.async = true;
+          script.defer = true;
+          document.body.appendChild(script);
+          window.removeEventListener('scroll', loadMapOnScroll);
+        }
+      });
+    </script>
     <!--  
     JavaScripts
     =============================================
